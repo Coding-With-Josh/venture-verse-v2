@@ -33,14 +33,14 @@ const testimonials = [
       "VentureVerse’s resources made it simple to stay updated with the latest crypto airdrops and trends.",
     name: "Lisa Park",
     designation: "Blockchain Enthusiast",
-    src: "https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=400&q=80",
+    src: avatarTwo,
   },
   {
     quote:
       "The community and guidance from VentureVerse boosted my crypto journey with real, actionable info.",
     name: "David Lee",
     designation: "DeFi Investor",
-    src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+    src: avatarOne,
   },
 ]
 

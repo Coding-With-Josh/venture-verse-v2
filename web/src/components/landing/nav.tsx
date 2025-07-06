@@ -5,6 +5,8 @@ import { ModeToggle } from '../ui/theme-toggle'
 import Link from 'next/link'
 import { Button } from '../ui/button'
 import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
+import logo from '@/assets/images/nft.png'
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -15,8 +17,15 @@ const Nav = () => {
     <>
       <nav className="flex items-center justify-between px-8 py-3 w-full border-b bg-white/10 dark:bg-zinc-900/10 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
         {/* Logo */}
-        <div className="text-2xl font-extrabold font-orbitron text-primary-500 uppercase select-none">
+        <div className="flex items-center justify-center gap-3">
+          <Image
+            src={logo}
+            alt='Logo'
+            className='size-[3rem]'
+          />
+        <div className="text-2xl hidden lg:block font-extrabold font-orbitron text-primary-500 uppercase select-none">
           VentureVerse
+        </div>
         </div>
 
         {/* Desktop Navigation */}
@@ -36,20 +45,39 @@ const Nav = () => {
           <Link
             href="/nft"
             className="text-sm font-orbitron text-primary-500 hover:underline hover:text-purple-400 transition-all duration-300 uppercase"
-          >
+            >
             NFT
           </Link>
           {/* Mode toggle */}
           <ModeToggle />
+          <Link
+            href="/sign-in"
+            >
+            <Button
+            variant="outline"
+            // style={{
+            //   clipPath:
+            //   'polygon(0 0, 50% 0, 75% 20%, 85% 20%, 90% 0, 100% 0, 100% 100%, 0 100%)',
+            // }}
+            className="transition-all duration-300 uppercase ml-4 border-primary-500 text-primary-500 hover:bg-primary/10 hover:text-primary-500 hover:border-2 hover:border-primary-500"
+            >
+            Sign in
+            </Button>
+            </Link>
+
+              <Link
+                href="/sign-up"
+                >
           <Button
-            style={{
-              clipPath:
-                'polygon(0 0, 50% 0, 75% 20%, 85% 20%, 90% 0, 100% 0, 100% 100%, 0 100%)',
-            }}
-            className="transition-all duration-300 uppercase ml-4 hover:bg-primary/10 hover:text-primary-500 hover:border-2 hover:border-primary-500"
+            // style={{
+            //   clipPath:
+            //     'polygon(0 0, 50% 0, 75% 20%, 85% 20%, 90% 0, 100% 0, 100% 100%, 0 100%)',
+            // }}
+            className="transition-all duration-300 uppercase hover:bg-primary/10 hover:text-primary-500 hover:border-2 hover:border-primary-500"
           >
-            Connect Wallet
+            Sign up
           </Button>
+          </Link>
         </div>
 
 

@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Orbitron, Inter } from "next/font/google";
-import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
-import Nav from "@/components/landing/nav";
+import { SessionProvider } from "next-auth/react";
 
 // const orbitron = localFont({
 //   src: "./fonts/OrbitronBlack-n6dV.ttf",
@@ -36,15 +35,17 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.className} ${orbitron.className} antialiased !overflow-x-hidden custom-scrollbar`}
-      >  <ThemeProvider
+      >
+        <SessionProvider>
+          <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-            {/* <Nav /> */}
-        {children}
-        </ThemeProvider>
+            {children}
+          </ThemeProvider>
+        </SessionProvider>
       </body>
     </html>
   );
