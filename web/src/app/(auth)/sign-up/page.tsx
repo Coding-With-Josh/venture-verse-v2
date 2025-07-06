@@ -53,6 +53,17 @@ export default function Page({
       setErrors(fieldErrors)
       return
     }
+    // Call registration endpoint before signIn
+    const res = await fetch("/api/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: form.email, password: form.password }),
+    })
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}))
+      setErrors({ email: data?.error || "Registration failed" })
+      return
+    }
     // Use signIn from useAuth
     await signIn("credentials", {
       email: form.email,

@@ -21,7 +21,7 @@ const Nav = () => {
           <Image
             src={logo}
             alt='Logo'
-            className='size-[3rem]'
+            className='w-[3rem] h-[3rem]'
           />
         <div className="text-2xl hidden lg:block font-extrabold font-orbitron text-primary-500 uppercase select-none">
           VentureVerse

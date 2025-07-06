@@ -1,16 +1,12 @@
 export interface User {
     email: string;
-    password: string
-    isActiveMember: boolean
-    tasksCompleted: number
-    hasMintedNFT: boolean
-    claimedPoints: boolean
-    role: Role
-    profilePhoto: string
-    username: string
-    rank: Rank
-    createdAt: string
-    updatedAt: string
+    hashedPassword: string;
+    tasksCompleted: number;
+    profilePhoto: string;
+    username: string;
+    rank: Rank;
+    createdAt: string;
+    updatedAt: string;
 }
 
 export interface Project {
