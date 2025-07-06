@@ -5,6 +5,7 @@ export interface User {
     profilePhoto: string;
     username: string;
     rank: Rank;
+    role: Role;
     createdAt: string;
     updatedAt: string;
 }
